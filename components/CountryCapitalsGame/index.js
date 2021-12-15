@@ -6,7 +6,7 @@ import { useCountries } from '../../hooks/useCountries';
 import Countries from './Countries';
 import Capitals from './Capitals';
 import Congratulations from './Congratulations';
-import styles from './styles.module.scss';
+import Button from './Button';
 
 const CountryCapitalsGame = ({data}) => {
     const [count, setCount] = useState(0);
@@ -56,42 +56,28 @@ const CountryCapitalsGame = ({data}) => {
     return (
         <div>
             <Countries countries={countries}>
-                {   
-                    countries.map((country, i) => {
-                        return (
-                            <button 
-                                className={classNames({
-                                    [styles.selected]: selectedCountry === country,
-                                    [styles.invalidMatch]: selectedCountry === country && isInvalidMatch
-                                })}
-                                key={`${country}-${i}`}
-                                onClick={() => {
-                                    setCount(count => count + 1);
-                                    setSelectedCountry(country);
-                                }}
-                            >
-                                {country}
-                            </button>
-                        )
-                    })
+                { countries.map((country, i) => (
+                    <Button 
+                        element={country}
+                        key={`${country}-${i}`}
+                        selectedElement={selectedCountry}
+                        isInvalidMatch={isInvalidMatch}
+                        setSelectedElement={setSelectedCountry}
+                        setCount={setCount}
+                    />))
                 }
             </Countries>
             <Capitals>
                 { capitals.map((capital, i) => (
-                    <button
-                        className={classNames({
-                            [styles.selected]: selectedCapital === capital,
-                            [styles.invalidMatch]: selectedCapital === capital && isInvalidMatch
-                        })}
-                        key={`${capital}-${i}`}
-                        onClick={() => {
-                            setCount(count => count + 1);
-                            setSelectedCapital(capital);
-                        }}
-                    >
-                        {capital}
-                    </button>
-                )) }
+                    <Button 
+                        element={capital}
+                        key={`capital`}
+                        selectedElement={selectedCapital}
+                        isInvalidMatch={isInvalidMatch}
+                        setSelectedElement={setSelectedCapital}
+                        setCount={setCount}
+                    />))
+                }
             </Capitals>
         </div>
     )
