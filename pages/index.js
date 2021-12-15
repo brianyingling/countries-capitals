@@ -1,6 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import CountryCapitalsGame from '../components/CountryCapitalsGame'
 
 export default function Home() {
@@ -14,8 +11,7 @@ export default function Home() {
     'United Kingdom':'London',
     'France':'Paris'
   }
-
-
+  
   return (
     <CountryCapitalsGame data={data}/>
   )

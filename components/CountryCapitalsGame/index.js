@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useCapitals } from '../../hooks/useCapitals';
 import { useCountries } from '../../hooks/useCountries';
@@ -7,7 +7,6 @@ import Countries from './Countries';
 import Capitals from './Capitals';
 import Congratulations from './Congratulations';
 import styles from './styles.module.scss';
-import { useEffect } from 'react/cjs/react.development';
 
 const CountryCapitalsGame = ({data}) => {
     const [count, setCount] = useState(0);
