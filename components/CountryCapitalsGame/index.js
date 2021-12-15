@@ -71,7 +71,7 @@ const CountryCapitalsGame = ({data}) => {
                     <Button 
                         element={capital}
                         isInvalidMatch={isInvalidMatch}
-                        key={capital}
+                        key={`${capital}-${i}`}
                         selectedElement={selectedCapital}
                         setSelectedElement={setSelectedCapital}
                         setCount={setCount}
