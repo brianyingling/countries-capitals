@@ -53,14 +53,14 @@ const CountryCapitalsGame = ({data}) => {
         return <Congratulations/>
     
     return (
-        <div>
+        <>
             <Countries countries={countries}>
                 { countries.map((country, i) => (
                     <Button 
                         element={country}
+                        isInvalidMatch={isInvalidMatch}
                         key={`${country}-${i}`}
                         selectedElement={selectedCountry}
-                        isInvalidMatch={isInvalidMatch}
                         setSelectedElement={setSelectedCountry}
                         setCount={setCount}
                     />))
@@ -70,15 +70,15 @@ const CountryCapitalsGame = ({data}) => {
                 { capitals.map((capital, i) => (
                     <Button 
                         element={capital}
+                        isInvalidMatch={isInvalidMatch}
                         key={capital}
                         selectedElement={selectedCapital}
-                        isInvalidMatch={isInvalidMatch}
                         setSelectedElement={setSelectedCapital}
                         setCount={setCount}
                     />))
                 }
             </Capitals>
-        </div>
+        </>
     )
 };
 
