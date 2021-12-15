@@ -54,7 +54,7 @@ const CountryCapitalsGame = ({data}) => {
     
     return (
         <>
-            <Countries countries={countries}>
+            <Countries>
                 { countries.map((country, i) => (
                     <Button 
                         element={country}
