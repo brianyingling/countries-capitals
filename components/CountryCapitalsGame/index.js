@@ -37,8 +37,8 @@ const CountryCapitalsGame = ({data}) => {
     useEffect(() => {
         if (selectedCountry && selectedCapital) {
             if (data[selectedCountry] === selectedCapital) {
-                setMatchedCountry(state => [...state, selectedCountry]);
-                setMatchedCapital(state => [...state, selectedCapital]);
+                setMatchedCountry(state => ({ ...state, ...{ [selectedCountry]: true } } ));
+                setMatchedCapital(state => ({ ...state, ...{ [selectedCapital]: true } } ));
             } else {
                 setIsInvalidMatch(true)
             }
