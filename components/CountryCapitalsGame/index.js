@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react';
-import classNames from 'classnames';
 import { useCapitals } from '../../hooks/useCapitals';
 import { useCountries } from '../../hooks/useCountries';
 import Countries from './Countries';
@@ -71,7 +70,7 @@ const CountryCapitalsGame = ({data}) => {
                 { capitals.map((capital, i) => (
                     <Button 
                         element={capital}
-                        key={`capital`}
+                        key={capital}
                         selectedElement={selectedCapital}
                         isInvalidMatch={isInvalidMatch}
                         setSelectedElement={setSelectedCapital}
